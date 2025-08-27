@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Vídeo de fundo -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <!-- Troque o src pelo seu arquivo .mp4 -->
+    <source src="videos/fundo.mp4" type="video/mp4" />
+    Seu navegador não suporta vídeo em background.
+  </video>
+
+  <!-- Camada de cor/efeito por cima do vídeo -->
+  <div class="overlay"></div>
+
+  <!-- Conteúdo (formulário) -->
+  <main class="container">
+    <h1 class="title">Login</h1>
+
+    <form class="card" action="#" method="post" autocomplete="off">
+      <label class="field">
+        <span>Nome de usuário</span>
+        <div class="input">
+          <input type="text" name="usuario" required />
+          <span class="icon">👤</span>
+        </div>
+      </label>
+
+      <label class="field">
+        <span>Password</span>
+        <div class="input">
+          <input type="password" name="senha" required minlength="8" />
+          <span class="icon">🔒</span>
+        </div>
+      </label>
+
+      <div class="row between">
+        <label class="check">
+          <input type="checkbox" name="lembrar" />
+          <i></i>
+          <span>Lembrar-me</span>
+        </label>
+
+        <a href="#" class="link">Esqueceu a senha?</a>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+
+      <p class="small">
+        Não tem uma conta? <a href="#" class="link">Registrar</a>
+      </p>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/* Reset e box-sizing */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+  --blur: 10px;
+  --glass: rgba(255,255,255,0.12);
+  --glass-border: rgba(255,255,255,0.25);
+  --text: #eef;
+  --muted: #cfd6ff;
+  --accent: #c6f6d5; /* verde suave no título/botão */
+}
+
+/* Vídeo em fullscreen */
+.bg-video{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Gradiente/overlay para deixar legível */
+.overlay{
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(1200px 800px at 50% 30%, rgba(255,255,255,0.07), transparent 60%),
+              linear-gradient(180deg, rgba(112,48,160,0.55), rgba(18,18,62,0.75));
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+
+body{
+  min-height: 100dvh;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* Container central */
+.container{
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+/* Título com leve glow */
+.title{
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: var(--accent);
+  text-shadow: 0 2px 18px rgba(0,0,0,.35);
+}
+
+/* Cartão “vidro” (glassmorphism) */
+.card{
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+
+/* Campo */
+.field{ display: block; text-align: left; margin-bottom: 14px; }
+.field > span{ display:block; font-size:14px; color: var(--muted); margin-bottom: 6px; }
+
+/* Input com ícone */
+.input{
+  position: relative;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+}
+.input input{
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: var(--text);
+  font-size: 16px;
+  padding-right: 28px;
+}
+.input .icon{
+  position: absolute;
+  right: 10px;
+  opacity: .8;
+}
+
+/* Linha utilitária */
+.row{ display:flex; gap:12px; align-items:center; }
+.between{ justify-content: space-between; margin: 6px 0 14px; }
+
+/* Checkbox custom */
+.check{ display: inline-flex; align-items:center; gap:8px; cursor:pointer; user-select:none; }
+.check input{ display:none; }
+.check i{
+  width: 18px; height: 18px; border-radius: 4px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0,0,0,.25);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.08);
+}
+.check input:checked + i{ background: #3bd27f; border-color: #3bd27f; }
+.check span{ color: var(--muted); font-size: 14px; }
+
+/* Links */
+.link{ color: #d7d7ff; text-decoration: none; font-size: 14px; opacity: .9; }
+.link:hover{ text-decoration: underline; opacity: 1; }
+
+/* Botão */
+.btn{
+  width: 100%;
+  border: 0;
+  margin-top: 6px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1a1a1a;
+  background: linear-gradient(180deg, #d8ffe7, #b6f5cf);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  cursor: pointer;
+}
+.btn:hover{ filter: brightness(1.05); }
+
+/* Rodapé pequeno no card */
+.small{
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
