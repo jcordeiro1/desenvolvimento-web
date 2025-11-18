@@ -1,0 +1,35 @@
+.sticky-cta{
+  position: fixed;
+  inset: auto 0 0 0; /* bottom full width */
+  background: rgba(6,16,28,.86);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(102,224,255,.18);
+  z-index: 50;
+}
+.sticky-cta__inner{
+  display: grid;
+  gap: .75rem;
+  align-items: center;
+  padding: .75rem var(--px-lg);
+  grid-template-columns: 1fr;
+}
+.sticky-cta__inner p{
+  color: #EAF6FF;
+}
+.sticky-cta__actions{
+  display: grid; gap: .5rem;
+}
+.sticky-cta__close{
+  position: absolute;
+  right: 10px; top: 8px;
+  background: transparent; color: #9FDFFF;
+  border: none; font-size: 1.6rem; line-height: 1;
+  cursor: pointer;
+}
+
+@media (width >= 860px){
+  .sticky-cta__inner{
+    grid-template-columns: 1fr auto;
+  }
+  .sticky-cta__actions{ grid-auto-flow: column; }
+}

@@ -1,0 +1,86 @@
+:root { --header-h: 72px; }
+
+/* Header fixo e TRANSPARENTE sobre o hero */
+.site-header{
+  position: sticky; top: 0; z-index: 50;
+  min-height: var(--header-h);
+  background: transparent;
+  isolation: isolate; /* cria contexto pra z-index */
+}
+
+/* Fundo translúcido ao rolar */
+.site-header.scrolled{
+  background: rgba(255,255,255,.75);
+  backdrop-filter: saturate(150%) blur(6px);
+  box-shadow: 0 1px 0 rgba(17,24,39,.08);
+}
+
+/* Barra principal */
+.nav{
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: var(--header-h);
+  gap: 1rem;
+}
+
+/* Brand */
+.nav__brand img{ display:block; height:auto; }
+
+/* Links (desktop) */
+.nav__links{
+  display:flex; align-items:center; gap: 2.25rem;
+  list-style: none; margin: 0; padding: 0;
+}
+.nav__link{
+  font-weight: 600;
+  color: #6b7280;
+  transition: color .2s ease;
+}
+.nav__link:hover{ color: var(--primary-color, #2563eb); }
+
+/* Ações (desktop) */
+.nav__auth{ display:flex; align-items:center; gap: 1rem; }
+.nav__login{
+  color: var(--primary-color, #2563eb);
+  font-weight: 700;
+  transition: opacity .2s ease;
+}
+.nav__login:hover{ opacity:.8; }
+
+/* Botão hamburguer (mobile) */
+.nav__toggle{
+  display:none;
+  font-size: 1.5rem; line-height: 1;
+  background: transparent; border: 0; cursor: pointer;
+}
+
+/* Drawer mobile */
+.nav__drawer{
+  position: fixed; inset: 0; z-index: 60;
+  background: rgba(0,0,0,.25);
+}
+.nav__panel{
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: min(84vw, 360px);
+  background: var(--bg-color, #fff);
+  box-shadow: -8px 0 24px rgba(0,0,0,.12);
+  padding: 1.25rem 1.25rem 1.5rem;
+  display: grid; align-content: start; gap: 1.25rem;
+}
+.nav__panel .nav__close{
+  background: transparent; border: 0; font-size: 1.75rem; cursor: pointer;
+  align-self: start; justify-self: end;
+}
+.nav__panel ul{
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1rem;
+}
+.nav__panel a{ font-weight: 600; color: #111827; }
+.nav__panel a:hover{ color: var(--primary-color, #2563eb); }
+.nav__drawer-actions{ margin-top: .75rem; display: grid; gap: .75rem; }
+
+/* --------- RESPONSIVO --------- */
+@media (max-width: 1279px){
+  /* no mobile some os grupos e mostra toggle */
+  .nav__links, .nav__auth { display: none; }
+  .nav__toggle { display: inline-flex; }
+}

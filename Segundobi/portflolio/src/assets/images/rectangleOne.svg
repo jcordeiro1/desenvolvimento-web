@@ -1,0 +1,10 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 300) rotate(45) scale(700 450)">
+      <stop offset="0" stop-color="#8EE6FF" stop-opacity="0.85"></stop>
+      <stop offset="0.4" stop-color="#6CC7F5" stop-opacity="0.55"></stop>
+      <stop offset="1" stop-color="#133B63" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g1)"></rect>
+</svg>

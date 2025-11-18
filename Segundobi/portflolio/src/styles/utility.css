@@ -1,0 +1,85 @@
+:root {
+  /* spacings */
+  --px-lg: 1.25rem;
+  --py-sm: .75rem;
+  --py-base: 1.25rem;
+  --py-lg: 2rem;
+  --py-xl: 3.5rem;
+
+  /* header height (mesma da nav) */
+  --header-h: 72px;
+
+  /* typography */
+  --fw-bold: 700;
+  --fs-sm: 0.95rem;
+  --fs-lg: 1.25rem;
+
+  /* colors */
+  --bg-color: #ffffff;
+  --primary-color: #2563eb;
+  --second-text-color: #6b7280;
+  --light-text-color: #ffffff;
+
+  /* extras usados nas sections/cards */
+  --light-gray: #f6f8fb;      /* fundo de cards */
+  --secondary-color: #bcdcff; /* detalhes/linhas decorativas */
+}
+
+/* paddings verticais */
+.py-sm   { padding-block: var(--py-sm); }
+.py-base { padding-block: var(--py-base); }
+.py-lg   { padding-block: var(--py-lg); }
+.py-xl   { padding-block: var(--py-xl); }
+
+/* padding horizontal */
+.px-lg { padding-inline: var(--px-lg); }
+
+/* por padrão, elementos "apenas desktop" ficam ocultos */
+.desktop-only { display: none; }
+
+/* helpers de layout */
+.flex { display: flex; }
+.grid { display: grid; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.even-columns { display: grid; gap: 1rem; }
+
+/* gaps */
+.gap-1 { gap: 1rem; }
+.gap-1\.5 { gap: 1.5rem; } /* classe utilitária com 1.5rem */
+
+/* wrapper clicável (ícones, etc.) */
+.btn-wrapper { cursor: pointer; padding: 2px; }
+
+/* container centralizado */
+.container {
+  --max-width: 680px;
+  width: min(var(--max-width), 100% - var(--px-lg) * 2);
+  margin-inline: auto;
+}
+
+/* utilidade para seções com “faixa” azul */
+.bg-tint { background: #EAF3FF; }
+
+/* âncoras não ficarem escondidas sob o header fixo */
+[id] { scroll-margin-top: var(--header-h); }
+
+/* rolagem suave para âncoras */
+html { scroll-behavior: smooth; }
+
+/* mostrar só no mobile (oculta no desktop) */
+.mobile-only { display: initial; }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ===== Desktop ===== */
+@media (min-width: 1280px) {
+  .container { --max-width: 1200px; }  /* antes 1050px: dá mais espaço p/ o nav */
+  .desktop-only { display: initial; }
+  .mobile-only { display: none; }
+  .even-columns { grid-auto-flow: column; grid-auto-columns: 1fr; }
+}
+

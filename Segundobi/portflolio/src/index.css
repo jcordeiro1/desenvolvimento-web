@@ -1,0 +1,47 @@
+:root{
+  /* cores e tipografia */
+  --bg-color: #ffffff;
+  --primary-color: #2563eb;
+  --second-text-color: #6b7280;
+  --light-text-color: #ffffff;
+  --fw-bold: 700;
+  --fs-sm: 0.95rem;
+  --fs-lg: 1.25rem;
+
+  /* spacings */
+  --px-lg: 1.25rem;
+  --py-sm: .75rem;
+  --py-base: 1.25rem;
+  --py-lg: 2rem;
+  --py-xl: 3.5rem;
+
+  /* altura do header fixo (usada no hero/header) */
+  --header-h: 72px;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+/* rolagem suave + âncoras compensadas pelo header fixo */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: #111827;
+  background: var(--bg-color);
+}
+
+/* resets simples */
+a { color: inherit; text-decoration: none; }
+ul { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3 { margin: 0 0 .5rem 0; }
+p { margin: 0 0 1rem 0; }
+
+/* qualidade de imagens e inputs */
+img { max-width: 100%; height: auto; display: block; }
+button, input, select, textarea { font: inherit; }

@@ -1,0 +1,112 @@
+/* ===== HEADER / NAVBAR ===== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h, 72px);
+  background: transparent;          /* menu transparente por cima do hero */
+  z-index: 10;                       /* acima do hero e das imagens */
+}
+
+nav.nav {
+  height: var(--header-h, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(.5rem, 2vw, 2rem);
+  flex-wrap: nowrap;                 /* NÃO deixa quebrar para segunda linha */
+  min-width: 0;                      /* evita “empurrões” do flex */
+}
+
+/* ===== Brand ===== */
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-width: 0;
+}
+
+.nav__brand img {
+  display: block;
+  height: 44px;                      /* controla o tamanho do logo */
+  width: auto;
+  object-fit: contain;
+}
+
+/* ===== Links de navegação (desktop) ===== */
+.nav__links ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(.75rem, 2vw, 2rem);
+  white-space: nowrap;               /* impede quebra de “Home | Soluções | ...” */
+}
+
+/* ===== Ações (desktop) ===== */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  white-space: nowrap;
+}
+
+/* cores dos links “login inverso” (igual aula) */
+.reverse-color { color: var(--primary-color); }
+.reverse-color:hover { color: var(--second-text-color); }
+
+/* pequeno respiro extra antes do botão */
+.ml-lg { margin-right: 1.75rem; }
+
+/* ===== Mobile hamburger ===== */
+.mobile-menu {
+  display: inline-flex;
+  background: transparent;
+  border: 0;
+  padding: .25rem;
+  cursor: pointer;
+  z-index: 11; /* acima do overlay */
+}
+
+/* Overlay do menu mobile (fecha/abre com a classe .is-open) */
+.mobile-menu-content {
+  position: fixed;
+  inset: 0;
+  display: none;                     /* fechado por padrão */
+  background: var(--bg-color);
+  z-index: 9;
+  padding-top: var(--header-h, 72px);
+}
+
+.mobile-menu-content.is-open {
+  display: flex;                     /* aberto */
+}
+
+.mobile-menu-content .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu-content ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu-content a {
+  font-size: var(--fs-lg, 1.25rem);
+}
+
+/* ===== Desktop: mostra links normais e esconde mobile ===== */
+@media (min-width: 1280px) {
+  header { background: transparent; }
+  .mobile-menu { display: none; }
+  .mobile-menu-content { display: none !important; }
+}

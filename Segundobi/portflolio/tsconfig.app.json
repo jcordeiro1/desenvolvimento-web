@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+
+    /* Alvo e libs */
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    /* Módulos / build */
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "useDefineForClassFields": true,
+    "skipLibCheck": true,
+
+    /* JSX (React moderno) */
+    "jsx": "react-jsx",
+
+    /* Tipos globais úteis (Vite + React) */
+    "types": ["vite/client", "react", "react-dom"],
+
+    /* Importação / sintaxe */
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+
+    /* Regras / lint de compilação */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+
+    /* Se quiser manter estas (TS 5.5+), pode reativar:
+    "erasableSyntaxOnly": true,
+    "noUncheckedSideEffectImports": true
+    */
+  },
+  "include": ["src"]
+}

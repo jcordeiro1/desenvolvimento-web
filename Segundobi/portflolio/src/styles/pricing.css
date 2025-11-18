@@ -1,0 +1,99 @@
+/* seção */
+.pricing-section {
+  padding: 64px 0;
+}
+
+.pricing-head {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.pricing-head .eyebrow {
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+
+.pricing-head h2 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  line-height: 1.2;
+  margin-top: 8px;
+}
+
+/* grid */
+.pricing-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 880px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
+
+/* card */
+.pricing-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e6e8ee;
+  border-radius: 16px;
+  padding: 20px 20px 24px;
+  box-shadow: 0 6px 18px rgba(13, 22, 36, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(13, 22, 36, 0.10);
+}
+
+.pricing-card.is-featured {
+  border-color: var(--primary-color, #2563eb);
+  box-shadow: 0 8px 28px rgba(37, 99, 235, 0.18);
+}
+
+/* badge do “1º mês grátis” */
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--primary-color, #2563eb);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.pricing-badge .badge-decor {
+  position: absolute;
+  inset: -8px -14px auto auto; /* canto direito por trás */
+  width: 120px;
+  opacity: .18;
+  pointer-events: none;
+}
+
+.pricing-body { margin-top: 16px; }
+.pricing-title { font-size: 1.125rem; font-weight: 800; margin: 0 0 6px; }
+.pricing-subtitle { font-size: .95rem; opacity: .8; margin: 0 0 18px; }
+
+.pricing-price { display: flex; align-items: baseline; gap: 8px; margin: 10px 0 12px; }
+.price { font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; }
+.price-suffix { font-size: 0.95rem; opacity: .8; }
+
+.pricing-cta { margin: 8px 0 18px; }
+.pricing-divider { border: 0; height: 1px; background: #eef0f6; margin: 12px 0 16px; }
+
+.pricing-features { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.pricing-features li { display: grid; grid-template-columns: 18px 1fr; align-items: start; gap: 8px; }
+.pricing-features .tick { font-weight: 900; color: var(--primary-color, #2563eb); }
