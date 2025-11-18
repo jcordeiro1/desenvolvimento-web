@@ -1,0 +1,41 @@
+/* Reset e base */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b1220; --card:#0f1a33; --ink:#e7edff; --muted:#a9b5d9;
+  --accent:#7cde8a; --accent2:#8b5cf6; --border:rgba(255,255,255,.1);
+  --shadow:0 18px 40px rgba(0,0,0,.45); --radius:14px;
+}
+html,body{height:100%}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 800px at 50% -10%,#17214a 0%,#0b1220 60%) fixed;color:var(--ink);display:grid;place-items:start center;padding:22px;line-height:1.55}
+.app{width:100%;max-width:760px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+h1{font-size:clamp(22px,5vw,30px);font-weight:800}
+.meta{color:var(--muted);font-weight:700}
+.meta strong{color:var(--accent)}
+.add{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.add input{flex:1;min-width:220px;padding:12px 14px;font-size:16px;border-radius:10px;border:1px solid var(--border);background:#0e1730;color:var(--ink);outline:none}
+.add input::placeholder{color:#95a3c9}
+.add input:focus{border-color:#9fb2ff;box-shadow:0 0 0 3px rgba(139,92,246,.25)}
+.add button{padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700;background:linear-gradient(135deg,var(--accent),#b7f5bf);color:#0c0c0c}
+.toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px;flex-wrap:wrap}
+.filters{display:flex;gap:8px}
+.filters button{padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:#0e1730;color:var(--ink);cursor:pointer}
+.filters button.active{outline:2px solid var(--accent2)}
+.ghost{background:transparent;color:#ffb4b4;border:2px solid #ffb4b4;padding:8px 12px;border-radius:10px;cursor:pointer}
+.lista{list-style:none;display:grid;gap:10px}
+.item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#0e1730;border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.check{display:flex;align-items:center;gap:10px}
+.check input{width:18px;height:18px}
+.done{text-decoration:line-through;color:#9aa7cf}
+.del{background:transparent;color:#ffb4b4;border:2px solid #ffb4b4;padding:8px 10px;border-radius:8px;cursor:pointer}
+.empty{color:var(--muted);text-align:center;padding:16px;border:1px dashed var(--border);border-radius:10px;background:#0d1630}
+@media (max-width:768px){.add{flex-wrap:wrap}}
+/* campo de edição inline */
+.edit{
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:6px 8px;
+  font-size:16px;
+  min-width:240px;
+}
+
