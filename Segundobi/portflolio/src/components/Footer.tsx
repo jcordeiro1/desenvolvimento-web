@@ -1,5 +1,5 @@
 // src/components/Footer.tsx
-import "../styles/footer.css";
+import "../styles/Footer.css";
 import Logo from "../assets/logo.svg";
 
 export default function Footer() {
