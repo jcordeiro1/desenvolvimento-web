@@ -6,7 +6,6 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-grid">
-        {/* coluna 1: logo + sociais */}
         <div className="footer-brand">
           <img src={Logo} alt="Logo" className="brand-logo" />
 
@@ -34,7 +33,6 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* coluna 2 */}
         <div className="footer-col">
           <h4>Empresa</h4>
           <ul>
@@ -54,7 +52,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* coluna 4 */}
         <div className="footer-col">
           <h4>Recursos</h4>
           <ul>
@@ -66,7 +63,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* barra inferior */}
       <div className="footer-bar">
         <div className="container">
           Feito com amor na aula de Programação Web💙 ©2024 AktieTech - Todos os direitos reservados.

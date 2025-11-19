@@ -1,10 +1,10 @@
-import Navbar from "../components/Navbar";
-import Button from "../components/Button";
-import Solution from "../components/Solution";
-import Testimonials from "../components/Testimonials";
-import Pricing from "../components/Pricing";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer"; // +++
+import Navbar from "../components/Navbar.tsx";
+import Button from "../components/Button.tsx";
+import Solution from "../components/Solution.tsx";
+import Testimonials from "../components/Testimonials.tsx";
+import Pricing from "../components/Pricing.tsx";
+import Contact from "../components/Contact.tsx";
+import Footer from "../components/Footer.tsx"; 
 
 import HeroRectangleOne from "../assets/images/rectangleOne.png";
 import HeroRectangleTwo from "../assets/images/rectangleTwo.png";
